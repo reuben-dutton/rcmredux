@@ -8,22 +8,22 @@ import pickle
 
 colourcsv = pd.read_csv("names/colournames.csv", encoding='utf8')
 
-# colourcsv['rgb'] = colourcsv['rgb'].apply(literal_eval)
-# colourcsv['rgb'] = colourcsv['rgb'].apply(list)
+colourcsv['rgb'] = colourcsv['rgb'].apply(literal_eval)
+colourcsv['rgb'] = colourcsv['rgb'].apply(list)
 
-# array = list(colourcsv['rgb'].to_numpy())
+array = list(colourcsv['rgb'].to_numpy())
 
-# tree = KDTree(array)
+tree = KDTree(array)
 
-# with open('names/colourKDTree.pickle', 'wb') as f:
-# 	pickle.dump(tree, f)
+with open('names/colourKDTree.pickle', 'wb') as f:
+	pickle.dump(tree, f)
 
-with open('names/colourKDTree.pickle', 'rb') as f:
-	colourtree = pickle.load(f)
+# with open('names/colourKDTree.pickle', 'rb') as f:
+# 	colourtree = pickle.load(f)
 
 
-dist, ind = colourtree.query([[145, 80, 200]], k=1)
-print(ind)
-print(dist)
+# dist, ind = colourtree.query([[145, 80, 200]], k=1)
+# print(ind)
+# print(dist)
 
-print(colourcsv.iloc[ind[0, 0]])
+# print(colourcsv.iloc[ind[0, 0]])
