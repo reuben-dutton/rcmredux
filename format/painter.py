@@ -38,6 +38,7 @@ class Painter:
 
 			# Create a full colour image using the (R, G, B, A) tuple
 			overlay = np.asarray(Image.new("RGBA", self.size, color=fullcolour))
+			overlay = overlay.copy()
 			# Get the alpha channel of the mask array
 			alpha = maskarray[:, :, 3]
 
