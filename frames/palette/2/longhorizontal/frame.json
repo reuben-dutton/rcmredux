@@ -1,1 +1,1 @@
-{"heads": [[312, 625], [937, 625], [1562, 625], [2187, 625]], "bigsize": 120, "smallsize": 72, "wrapwidth": 14, "size": [2500, 1250], "style": "palette", "name": "long-horizontal", "num": 2}
+{"heads": [[156, 312], [468, 312], [781, 312], [1093, 312]], "bigsize": 60, "smallsize": 36, "wrapwidth": 14, "size": [1250, 625], "style": "palette", "name": "long-horizontal", "num": 2}

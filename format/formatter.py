@@ -1,9 +1,10 @@
+from os.path import join
 
 from format.painter import Painter
 from format.printer import Printer
 from frames.frameManager import Frame
 
-
+import psutil
 
 class Formatter:
 
@@ -17,7 +18,9 @@ class Formatter:
 		self.painter.setFrame(frame)
 		self.printer.setFrame(frame)
 
-	def getImages(self, colours: list[tuple[int, int, int]]):
+	def saveImages(self, colours: list[tuple[int, int, int]], path: str):
 		cleanImage = self.painter.paintColours(colours)
+		cleanImage.save(join(path, "clean.png"))
+
 		fullImage = self.printer.printNames(cleanImage)
-		return cleanImage, fullImage
+		fullImage.save(join(path, "full.png"))

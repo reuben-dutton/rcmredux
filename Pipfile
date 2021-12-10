@@ -13,6 +13,7 @@ python-dotenv = "*"
 duckduckgoimages = "*"
 matplotlib = "*"
 facepy = "*"
+psutil = "*"
 
 [dev-packages]
 

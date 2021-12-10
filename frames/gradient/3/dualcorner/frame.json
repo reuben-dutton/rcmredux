@@ -1,1 +1,1 @@
-{"heads": [[1250, 0], [0, 2499], [2499, 2499]], "bigsize": 160, "smallsize": 80, "wrapwidth": 50, "size": [2500, 2500], "style": "gradient", "name": "three-bottom-corners", "num": 3}
+{"heads": [[625, 0], [0, 1249], [1249, 1249]], "bigsize": 80, "smallsize": 40, "wrapwidth": 50, "size": [1250, 1250], "style": "gradient", "name": "three-bottom-corners", "num": 3}

@@ -9,6 +9,8 @@ resmap = {"gradient": Image.ANTIALIAS,
 		  "palette": Image.NEAREST,
 		  "default": Image.ANTIALIAS}
 
+import psutil
+
 class Painter:
 
 	def __init__(self, frame: Frame):
@@ -56,6 +58,7 @@ class Painter:
 			# on top of the current base image.
 			base = base + overlay*maskalpha
 
+
 		# Sanity check - print the highest and lowest alpha value
 		# print(np.amax(base[:, :, 3]))
 		# print(np.amin(base[:, :, 3]))
@@ -65,5 +68,6 @@ class Painter:
 
 		# Set all alpha values to 255 (fully opaque)
 		result.putalpha(255)
+
 
 		return result
