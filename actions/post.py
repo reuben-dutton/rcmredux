@@ -32,4 +32,4 @@ f.saveImages(colours, _bdir)
 packet = Packet(picker, frame, colours)
 
 fbp = FacebookPoster()
-# fbp.post(packet)
+fbp.post(packet)
