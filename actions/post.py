@@ -31,13 +31,21 @@ print(colours)
 # Get a frame for n colours of a particular type
 frame = FrameManager.getRandomFrame(FrameType.ALL, n)
 
+print(frame)
+
 f = Formatter(frame)
 
+print(f)
+
 clean, full = f.getImages(colours)
+
+print(clean)
 
 # Save the image
 clean.save(join(_bdir, "clean.png"))
 full.save(join(_bdir, "full.png"))
+
+print('saved')
 
 packet = Packet(picker, frame, colours)
 
