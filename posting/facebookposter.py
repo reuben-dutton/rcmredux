@@ -26,8 +26,8 @@ class FacebookPoster(GenericPoster):
 	def __init__(self):
 		self.url = 'https://graph.facebook.com/me/feed'
 		self.page_id = os.environ['PAGE_ID']
-		self.access_token = os.environ['ACCESS_TOKEN']
-		self.graph = facepy.GraphAPI(os.environ['ACCESS_TOKEN'])
+		self.access_token = os.environ['FB_ACCESS_TOKEN']
+		self.graph = facepy.GraphAPI(os.environ['FB_ACCESS_TOKEN'])
 
 	def post(self, packet):
 		with open(config.FULL_PATH, 'rb') as image:

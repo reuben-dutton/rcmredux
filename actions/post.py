@@ -11,6 +11,7 @@ import config
 from memory.memory import Memory
 from posting.packet import Packet
 from posting.facebookposter import FacebookPoster
+from posting.twitterposter import TwitterPoster
 from picker.pickerManager import PickerManager, PickerType
 from frames.frameManager import FrameManager, FrameType
 from format.formatter import Formatter
@@ -37,3 +38,6 @@ packet = Packet(picker, frame, colours)
 
 fbp = FacebookPoster()
 fbp.post(packet)
+
+tp = TwitterPoster()
+tp.post(packet)

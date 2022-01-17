@@ -21,13 +21,13 @@ class TwitterPoster(GenericPoster):
 		self.client = tweepy.Client(bearer_token=os.environ['BEARER_TOKEN'],
 						consumer_key=os.environ['CONSUMER_KEY'],
 						consumer_secret=os.environ['CONSUMER_SECRET'],
-						access_token=os.environ['ACCESS_TOKEN'],
-						access_token_secret=os.environ['ACCESS_TOKEN_SECRET'])
+						access_token=os.environ['TW_ACCESS_TOKEN'],
+						access_token_secret=os.environ['TW_ACCESS_TOKEN_SECRET'])
 
 		auth = tweepy.OAuthHandler(os.environ['CONSUMER_KEY'],
 								   os.environ['CONSUMER_SECRET'])
-		auth.set_access_token(os.environ['ACCESS_TOKEN'],
-							  os.environ['ACCESS_TOKEN_SECRET'])
+		auth.set_access_token(os.environ['TW_ACCESS_TOKEN'],
+							  os.environ['TW_ACCESS_TOKEN_SECRET'])
 
 		self.api = tweepy.API(auth)
 
