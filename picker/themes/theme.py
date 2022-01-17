@@ -10,7 +10,7 @@ class Theme:
 		self.balls = set()
 
 	def __repr__(self):
-		return f'Theme(name={self.name}, balls={self.balls})'
+		return f'Theme(name={self.name})'
 
 	def add(self, ball: Ball):
 		self.balls.add(ball)

@@ -40,3 +40,15 @@ class ThemeReader:
 			if theme.name == name or name == None:
 				possThemes.append(theme)
 		return random.choice(possThemes)
+
+	@staticmethod
+	def getRandomThemes() -> list[Theme]:
+		path = os.path.join(_cdir, 'data')
+		themePaths = os.listdir(path)
+		possThemes = []
+		for item in themePaths:
+			filename, _ = os.path.splitext(item)
+			theme = ThemeReader.getTheme(filename)
+			if theme.name != 'default':
+				possThemes.append(theme)
+		return random.sample(possThemes, 5)

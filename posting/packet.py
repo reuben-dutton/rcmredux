@@ -12,4 +12,6 @@ class Packet:
 
 	@property
 	def message(self):
-		return "Test message"
+		if self.picker.ptype == "Theme":
+			return f"Themed - {self.picker.subtype}"
+		return ""
