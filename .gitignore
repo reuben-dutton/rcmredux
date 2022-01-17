@@ -4,3 +4,4 @@ full.png
 dl_images/
 tokens.txt
 *.env
+*.bat

@@ -25,7 +25,6 @@ class FacebookPoster(GenericPoster):
 
 	def __init__(self):
 		self.url = 'https://graph.facebook.com/me/feed'
-		print(os.environ)
 		self.page_id = os.environ['PAGE_ID']
 		self.access_token = os.environ['FB_ACCESS_TOKEN']
 		self.graph = facepy.GraphAPI(self.access_token)
@@ -91,9 +90,12 @@ class FacebookPoster(GenericPoster):
 		memory.current_theme = top_theme
 		memory._smem()
 
-vote_message = "test post pls ignore" \
+vote_message = "-- THEME VOTE --" \
       + "\n" \
       + "\n" \
+      + "Vote for a theme - the highest voted theme 24 hours after this vote " \
+      + "was posted will be the theme for 3 days afterwards. The next vote " \
+      + "be in one week from now."
       + "\n" \
       + u"\U0001F493" + " - " + '{}' + "\n" \
       + u"\U0001F602" + " - " + '{}' + "\n" \
@@ -101,4 +103,5 @@ vote_message = "test post pls ignore" \
       + u"\U0001F622" + " - " + '{}' + "\n" \
       + u"\U0001F620" + " - " + '{}' + "\n" \
       + "\n" \
-      + "voting on this won't do anything btw, sorry, just testing"
+      + "If you have any theme ideas, post them in the comments below <3. I " \
+      + "will try to add them to the bot when I can."
