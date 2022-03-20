@@ -19,17 +19,17 @@ memory = Memory()
 n = random.choice(config.NUMS, p=config.DIST)
 
 # Pick a colour picker and then get n colours
-picker = PickerManager.getPicker(PickerType.SCHEME|PickerType.TRUE, n)
+picker = PickerManager.getPicker(PickerType.THEME, 3, subtype="Feelings of Home")
 colours = picker.getColours()
 
 # Get a frame for n colours of a particular type
-frame = FrameManager.getRandomFrame(FrameType.ALL, n)
+frame = FrameManager.getRandomFrame(FrameType.ALL, 3)
 
 f = Formatter(frame)
 
 f.saveImages(colours)
 
-packet = Packet(picker, frame, colours)
+# packet = Packet(picker, frame, colours)
 
-poster = FacebookPoster()
-poster.post(packet)
+# poster = FacebookPoster()
+# poster.post(packet)

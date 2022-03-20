@@ -20,9 +20,9 @@ dl_path = join(_cdir, 'dl_images')
 
 
 tc = 64
-term = "street pigeon"
-desc = "This theme sponsored by the US government"
-name = "Pigeon"
+term = "gemstone black onyxes"
+desc = "Cool black stone, very pretty, very expensive"
+name = "Onyxes"
 
 plot = False
 save = not plot
@@ -30,11 +30,11 @@ save = not plot
 download = False
 
 remove_greys = False
-grey_radius = 45
-remove_whites = False
-white_radius = 75
+grey_radius = 20
+remove_whites = True
+white_radius = 300
 remove_blacks = False
-black_radius = 100
+black_radius = 75
 
 double = True
 triple = False
