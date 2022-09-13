@@ -1,8 +1,10 @@
 from json import dump
-from os import listdir
-from os.path import dirname, join, realpath
+from os import listdir, rename
+from os.path import dirname, join, realpath, isdir, exists
+import shutil
 
 import DuckDuckGoImages as ddg
+from duckduckgo_search import ddg_images
 from matplotlib import pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
@@ -19,30 +21,40 @@ _bdir = join(_cdir, "..")
 dl_path = join(_cdir, 'dl_images')
 
 
-tc = 64
-term = "gemstone black onyxes"
-desc = "Cool black stone, very pretty, very expensive"
-name = "Onyxes"
+tc = 32
+term = "pikachu"
+desc = "The poster child(?) of Pokemon"
+name = "Pikachu (Pokemon)"
 
 plot = False
 save = not plot
 
 download = False
 
-remove_greys = False
-grey_radius = 20
-remove_whites = True
-white_radius = 300
+remove_greys = True
+grey_radius = 25
+remove_whites = False
+white_radius = 75
 remove_blacks = False
 black_radius = 75
 
-double = True
+double = False
 triple = False
+
 
 # Download images returned with a given search query
 if download:
-	ddg.download(term, folder=dl_path, max_urls=50, 
-	         thumbnails=True, remove_folder=True)
+    if exists(dl_path):
+        shutil.rmtree(dl_path)
+	# ddg.download(term, folder=dl_path, max_urls=50, 
+	#          thumbnails=True, remove_folder=True)
+    # 
+    ddg_images(term, max_results=50, size="Small", download=True)
+
+files = listdir(_cdir)
+folder_path = [item for item in files if isdir(item)][0]
+rename(folder_path, dl_path)
+
 
 points = np.zeros((1, 1))
 weights = np.zeros((1, 1))
@@ -55,7 +67,10 @@ for image_name in listdir(dl_path):
 		continue
 	pixels = np.asarray(image)[0::10, 0::10]
 	shape = pixels.shape
-	w, h, l = shape
+	try:
+		w, h, l = shape
+	except:
+		w, h = shape
 	try:
 		pixels = pixels.reshape((w*h, 3))
 	except:
